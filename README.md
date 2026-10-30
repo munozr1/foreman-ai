@@ -1,6 +1,6 @@
 # Foremen AI
 
-Created by [Rodrigo Munoz](https://github.com/munozr1).
+
 
 An AI agent can read accurate data and still act on an outdated view seconds later. Foremen AI tracks what an agent read and shows what changed while it was thinking. In the inventory demo, two agents confirm **two orders for the last unit in stock**; enable the revision guard, and the stale reservation is rejected before the second order is created. Each finding identifies the missed write, the agent behind it, and the database versions that show what happened.
 
