@@ -1,0 +1,24 @@
+Run c4361f068df1421bb9ffda2a90fd9c07: unguarded race
+Orders confirmed: 2 for 1 unit of stock
+  agent-b: committed at 266527583
+  agent-a: committed at 266590864
+STALE DECISION  agent-a  reserve_stock  (committed)
+  read     inv/sku-1  at version 266510714
+  missed   a write by agent-b at version 266527583
+  decided  at version 266590864
+  the view was about 0.08 s old when the decision was made
+
+Run c7dc923b61d14683b264ff39f73331f7: guarded race
+Orders confirmed: 1 for 1 unit of stock
+  agent-b: committed at 284879363
+  agent-a: blocked_stale at 284930428
+STALE DECISION  agent-a  reserve_stock  (blocked_stale)
+  read     inv/sku-1  at version 284863463
+  missed   a write by agent-b at version 284879363
+  decided  at version 284930428
+  the view was about 0.07 s old when the decision was made
+
+Run 8f2faba3d7354454bb0ad27fca5e3e85: unguarded serial
+Orders confirmed: 1 for 1 unit of stock
+  agent-a: committed at 301246084
+No stale decisions

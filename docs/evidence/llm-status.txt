@@ -1,0 +1,4 @@
+FOREMEN_TRACING=1 make demo-race-llm: PASS
+Run bd29e055fede44dfa25099742e551971
+Two real-agent orders confirmed for one unit; one stale finding for agent-a.
+See llm.txt for actual output and sdk-trace.txt for trace verification.

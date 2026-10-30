@@ -1,0 +1,11 @@
+Invocation: FOREMEN_TRACING=1 make test demo-race-llm
+make test: PASS
+make demo-race-llm: PASS on subsequent retry with replacement key; see llm.txt
+
+Latency: 10/20 races complete; latest commit-to-row 0.095s
+Latency: 15/20 races complete; latest commit-to-row 0.173s
+Latency: 20/20 races complete; latest commit-to-row 0.163s
+LATENCY {"measured_at": "2026-10-30T20:19:34.914728+00:00", "runs": 20, "commit_to_row_p50_seconds": 0.16431094849997407, "commit_to_row_p95_seconds": 0.2277220160001434, "samples_seconds": [0.15704829099991002, 0.1047349849998227, 0.16964084599999296, 0.09947787999999491, 0.22721454299994548, 0.1568405250000069, 0.17124864199990952, 0.09682097799986877, 0.2277220160001434, 0.09524791300009383, 0.17157433500005936, 0.22562472799995703, 0.09769319100018947, 0.16440839300003063, 0.17323085399993943, 0.16421350399991752, 0.2300260110000636, 0.09469958399995448, 0.1782349999998587, 0.16327440099985324]}
+53 passed in 10.93s
+Bridge restart PASS: all 25 exact mutations retained; no gaps
+Bridge restart PASS: all 75 exact mutations retained; no gaps

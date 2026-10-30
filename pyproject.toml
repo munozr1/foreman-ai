@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "foremen-ai"
+version = "0.1.0"
+description = "Detect and block stale-read decisions between agents sharing FoundationDB."
+authors = [{name = "Rodrigo Munoz"}]
+requires-python = ">=3.12"
+dependencies = [
+  "foundationdb==8.0.0",
+  "clickhouse-connect==1.11.0",
+  "confluent-kafka==2.16.1",
+  "protobuf==7.36.2",
+  "kafka-fdb-streamline @ git+https://github.com/Ronitsabhaya75/Kafka-FDB-Streamline.git@2762839b2f51d4eedf2f1a4b8e9f2770275099c4",
+]
+
+[project.optional-dependencies]
+llm = ["openai-agents==0.24.0"]
+test = ["pytest==9.2.0"]
+
+[project.scripts]
+foremen = "foremen.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["foremen*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: requires live FoundationDB, Kafka, bridge, and ClickHouse"]
+addopts = "-ra --strict-markers"

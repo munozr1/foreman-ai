@@ -1,0 +1,24 @@
+$ docker compose run --rm --no-deps -T app python -m demo.scripted_race
+ Container foremen-ai-app-run-446a1957ae31 Creating
+ Container foremen-ai-app-run-446a1957ae31 Created
+Run f511acb69c754a71868477c29457d700: unguarded race
+Orders confirmed: 2 for 1 unit of stock
+  agent-b: committed at 902935506
+  agent-a: committed at 902981890
+STALE DECISION  agent-a  reserve_stock  (committed)
+  read     inv/sku-1  at version 902925740
+  missed   a write by agent-b at version 902935506
+  decided  at version 902981890
+  the view was about 0.06 s old when the decision was made
+$ docker compose run --rm --no-deps -T app python -m demo.scripted_race --guarded
+ Container foremen-ai-app-run-cb4837b5d76d Creating
+ Container foremen-ai-app-run-cb4837b5d76d Created
+Run b6266c67c8844710b989ff331d15fc81: guarded race
+Orders confirmed: 1 for 1 unit of stock
+  agent-b: committed at 909852836
+  agent-a: blocked_stale at 909896691
+STALE DECISION  agent-a  reserve_stock  (blocked_stale)
+  read     inv/sku-1  at version 909835936
+  missed   a write by agent-b at version 909852836
+  decided  at version 909896691
+  the view was about 0.06 s old when the decision was made

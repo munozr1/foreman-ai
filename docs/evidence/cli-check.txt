@@ -1,0 +1,6 @@
+STALE DECISION  agent-a  reserve_stock  (committed)
+  read     inv/sku-1  at version 266510714
+  missed   a write by agent-b at version 266527583
+  decided  at version 266590864
+  the view was about 0.08 s old when the decision was made
+1 finding(s) for run c4361f068df1421bb9ffda2a90fd9c07; CDC caught up.

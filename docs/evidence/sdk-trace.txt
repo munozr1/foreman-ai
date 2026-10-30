@@ -1,0 +1,21 @@
+SDK custom read span and successful export verified
+{
+  "object": "trace.span",
+  "id": "span_e533115367844084b73b08ec",
+  "trace_id": "trace_b1a821f225a9430db644eef43600f98e",
+  "parent_id": null,
+  "started_at": "2026-10-30T20:24:58.588631+00:00",
+  "ended_at": "2026-10-30T20:24:58.602234+00:00",
+  "span_data": {
+    "type": "custom",
+    "name": "foremen.read",
+    "data": {
+      "key": "inv/sku-1",
+      "read_version": 1141047296,
+      "rev": 147
+    }
+  },
+  "error": null
+}
+Exported 2 items
+Real-agent decision trace links: [["agent-a", "committed", "trace_d4b5b9e5456d4c228930c854196b1897"], ["agent-b", "committed", "trace_6805c2953b0242a681c70e0a9871cc08"]]

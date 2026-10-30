@@ -1,0 +1,12 @@
+M0 PASS: committed key/value and native CDC version match
+{
+  "key": "foremen/spike/6389266669164090ae88e8a678c37018",
+  "value": "{\"qty\": 1, \"rev\": 1, \"writer\": \"spike\"}",
+  "client_commit_version": 41282230,
+  "cdc_commit_version": 41282230,
+  "sequence_no": 0,
+  "kafka_offset": 1587,
+  "batch_index": 0,
+  "commit_to_kafka_seconds": 0.1096,
+  "watermark": 41282230
+}

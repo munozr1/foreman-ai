@@ -1,0 +1,8 @@
+agent-b: One unit of sku-1 has been successfully reserved.
+agent-a: One unit of sku-1 has been successfully reserved.
+Run bd29e055fede44dfa25099742e551971: 2 orders confirmed for 1 unit of stock
+STALE DECISION  agent-a  reserve_stock  (committed)
+  read     inv/sku-1  at version 1079547608
+  missed   a write by agent-b at version 1081688681
+  decided  at version 1084045460
+  the view was about 4.50 s old when the decision was made
