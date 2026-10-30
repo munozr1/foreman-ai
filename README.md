@@ -2,9 +2,9 @@
 
 Created by [Rodrigo Munoz](https://github.com/munozr1).
 
-FoundationDB protects a short transaction; Foremen detects and blocks stale decisions made by agents thinking between transactions.
+An AI agent can read accurate data and still act on an outdated view seconds later. Foremen AI tracks what an agent read and shows what changed while it was thinking. In the inventory demo, two agents confirm **two orders for the last unit in stock**; enable the revision guard, and the stale reservation is rejected before the second order is created. Each finding identifies the missed write, the agent behind it, and the database versions that show what happened.
 
-Two agents check the last unit of `sku-1`. B reserves it while A is paused after its read. Unguarded, A also confirms an order, leaving **two orders for one unit** even though stock reads zero. Guarded, A's outdated revision is rejected. The detector reports the read version, the intervening writer and commit version, and the approximate age of A's view.
+Foremen piggybacks on my friend's [Kafka-FDB-Streamline](https://github.com/Ronitsabhaya75/Kafka-FDB-Streamline) bridge to bring FoundationDB's change history into that investigation.
 
 ## Build status
 
