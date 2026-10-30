@@ -2,9 +2,9 @@
 
 
 
-An AI agent can read accurate data and still act on an outdated view seconds later. Foremen AI tracks what an agent read and shows what changed while it was thinking. In the inventory demo, two agents confirm **two orders for the last unit in stock**; enable the revision guard, and the stale reservation is rejected before the second order is created. Each finding identifies the missed write, the agent behind it, and the database versions that show what happened.
+An AI agent can read accurate data and still act on an outdated view seconds later. Foremen AI makes that failure traceable by connecting an agent's recorded reads and decisions to the database changes it missed. In the inventory demo, it identifies which agent changed the stock and the commit version of that change, and estimates how old the other agent's view was when it acted. The demo also shows how standard optimistic concurrency control can block a stale reservation by checking the inventory revision before committing an order.
 
-Foremen piggybacks on [Kafka-FDB-Streamline](https://github.com/Ronitsabhaya75/Kafka-FDB-Streamline) bridge to bring FoundationDB's change history into that investigation.
+Foremen piggybacks on the [Kafka-FDB-Streamline](https://github.com/Ronitsabhaya75/Kafka-FDB-Streamline) bridge to bring FoundationDB's change history into that investigation.
 
 ## Build status
 
